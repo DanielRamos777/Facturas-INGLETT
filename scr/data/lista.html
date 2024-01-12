@@ -1,0 +1,112 @@
+<!-- archivo scr\data\lista.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Facturas</title>
+    <link rel="stylesheet" href="../styles/lista.css">
+</head>
+<body>
+
+    <h1>Registro de Facturas</h1>
+
+    <form id="facturaForm">
+        <label for="area">Área:</label>
+        <select id="area" name="area" required>
+            <option value="COSTURA">COSTURA</option>
+            <option value="PESAJE">PESAJE</option>
+            <option value="CODIFICACION">CODIFICACION</option>
+        </select>
+        
+        <br>
+
+        <label for="serie">Serie:</label>
+        <input type="text" id="serie" name="serie" required>
+
+        <br>
+
+        <label for="cliente">Cliente:</label>
+        <input type="text" id="cliente" name="cliente" required>
+
+        <br>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <br>
+
+        <label for="moneda">Moneda:</label>
+        <select id="moneda" name="moneda" required>
+            <option value="sol">Sol</option>
+            <option value="dolar">Dólar</option>
+        </select>
+
+        <br>
+
+        <label for="observacion">Observación:</label>
+        <textarea id="observacion" name="observacion" rows="4" required></textarea>
+
+        <br>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+        <br>
+
+        <label for="subtotal">Subtotal:</label>
+        <input type="number" id="subtotal" name="subtotal" step="0.01" required>
+
+        <br>
+
+        <label for="detraccion">Detracción:</label>
+        <select id="detraccion" name="detraccion" required>
+            <option value="3%">3%</option>
+            <option value="10%">10%</option>
+            <option value="12%">12%</option>
+            <option value="0%">No Afecta</option>
+        </select>
+
+        <br>
+
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+
+        <br>
+
+        <input type="submit" value="Registrar Factura">
+    </form>
+
+    <!-- Botón para borrar todas las facturas -->
+    <button id="borrarTodo" onclick="borrarTodasLasFacturas()">Borrar Todas las Facturas</button>
+
+    <!-- Mostrar la lista de facturas -->
+    <h2>Lista de Facturas Registradas</h2>
+    <table id="facturaTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Área</th>
+                <th>Serie</th>
+                <th>Cliente</th>
+                <th>Fecha</th>
+                <th>Observación</th>
+                <th>Descripción</th>
+                <th>Subtotal</th>
+                <th>IGV</th>
+                <th>Total</th>
+                <!-- <th>Detracción</th> -->
+                <th>Monto a Depositar</th>
+                <th>Comentarios</th>
+                <!-- Agrega otras columnas según tus campos -->
+            </tr>
+        </thead>
+        
+        <tbody>
+            <!-- Los datos de la tabla se llenarán dinámicamente con JavaScript -->
+        </tbody>
+    </table>
+
+    <script src="../js/lista.js"></script>
+</body>
+</html>
